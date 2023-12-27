@@ -1,0 +1,26 @@
+<div *ngIf="post">
+  <h2 class="mb-4 mt-4">Edit Post {{ postId }}</h2>
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="email"
+        class="form-control"
+        id="title"
+        formControlName="title"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Body</label>
+      <textarea
+        type="password"
+        class="form-control"
+        id="body"
+        formControlName="body"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+</div>

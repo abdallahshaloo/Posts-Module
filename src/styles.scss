@@ -1,0 +1,72 @@
+$mainColor: #ff8e31;
+$hoverMainColor: #e9ae7d;
+
+$secondaryColor: #74a6bd;
+$hoverSecondaryColor: rgb(115, 179, 209);
+$gray: #dadada;
+
+body,
+html {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+}
+
+.btn-info {
+  background-color: $secondaryColor;
+  border-color: $secondaryColor;
+  color: #fff;
+  margin-right: 20px;
+
+  &:hover {
+    background-color: $hoverSecondaryColor;
+    border-color: $hoverSecondaryColor;
+    color: #fff;
+  }
+}
+.btn-warning {
+  background-color: $mainColor;
+  border-color: $hoverMainColor;
+  color: #fff;
+
+  &:hover {
+    background-color: $mainColor;
+    border-color: $hoverMainColor;
+    color: #fff;
+  }
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  .page-item {
+    .page-link {
+      background-color: $gray;
+      color: #fff;
+      &:not(:disabled) {
+        background-color: $secondaryColor;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.toast-container {
+  height: 100vh;
+}

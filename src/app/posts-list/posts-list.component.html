@@ -1,0 +1,57 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Posts</span>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-lg-4 col-md-6 mb-4"
+      *ngFor="let post of getDisplayedPosts()"
+    >
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">
+            {{ post.body }}
+          </p>
+        </div>
+        <div class="card-footer text-muted">
+          <a [routerLink]="['/posts', post.id]" class="btn btn-info">Details</a>
+          <a [routerLink]="['/edit-post', post.id]" class="btn btn-warning"
+            >Edit</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="pagination">
+        <nav>
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <button
+                class="page-link"
+                (click)="handlePageChange(currentPage - 1)"
+                [disabled]="currentPage === 1"
+              >
+                Previous
+              </button>
+            </li>
+            <li class="page-item">
+              <button
+                class="page-link"
+                (click)="handlePageChange(currentPage + 1)"
+                [disabled]="isLlastPage"
+              >
+                Next
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

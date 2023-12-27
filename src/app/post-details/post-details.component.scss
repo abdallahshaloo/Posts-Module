@@ -1,0 +1,14 @@
+.card {
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .card-body {
+    &:nth-last-child(1) {
+      .hr {
+        display: none;
+      }
+    }
+  }
+}
